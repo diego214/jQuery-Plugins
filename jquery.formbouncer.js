@@ -50,9 +50,12 @@ jQuery.fn.formBouncer = function(){
 
 			if (error != '') {
 				form.data('valid', false);
-				jQuery('.flash-error', form).remove();
-				form.prepend('<div class=\'flash-error\'>' + error + '</div>');
-				jQuery('.flash-error', form).hide().slideDown();
+				
+				if (!form.hasClass('silent')) {
+					jQuery('.flash-error', form).remove();
+					form.prepend('<div class=\'flash-error\'>' + error + '</div>');
+					jQuery('.flash-error', form).hide().slideDown();
+				}
 				return false;
 			}
 			
