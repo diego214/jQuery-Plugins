@@ -14,6 +14,7 @@ jQuery.fn.formBouncer = function(){
 	
 	function markInvalid(input) {
 		if (!input.hasClass('invalid')) input.addClass('invalid');
+                jQuery('.invalid').eq(0).focus();
 	}
 	
 	return this.each(function(){
