@@ -13,8 +13,8 @@ jQuery.fn.hinty = function() {
 		$this.val(title);
 		
 		// set the caret position to 0, making it appear that the hint text is non selectable text
-		$this.focus(setCaretPost).click(setCaretPost);
-		function setCaretPost(){
+		$this.focus(setCaretPos).click(setCaretPos);
+		function setCaretPos(){
 			if (this.value == title){
 				if (this.setSelectionRange) {
 					this.focus();
